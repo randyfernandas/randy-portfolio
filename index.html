@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/profile-1.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Randy's Portfolio</title>
+    <title>Randy Fernanda Saputra | Mobile & Web Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Randy Fernanda Saputra - Mobile & Web Developer specializing in Flutter, iOS, Android, and React JS." />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -13,377 +14,176 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="dark:text-gray-200 dark:bg-slate-900">
-    <header
-      class="fixed xl:block w-full py-4 lg:px-0 px-5 z-[999] duration-300"
-    >
-      <nav class="flex justify-between items-center max-w-6xl mx-auto px-2">
-        <div class="flex gap-4 items-center">
-          <div
-            class="bg-primary text-white rounded-full size-10 text-xl grid place-items-center"
-          >
-            <img src="./assets/profile-1.png" alt="" class="rounded-full h-[40px] w-[30px]">
+  <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-violet-500/30">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 glass-nav transition-all duration-300 py-3.5">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <!-- Brand / Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="relative p-0.5 rounded-full bg-gradient-to-tr from-violet-600 to-cyan-400">
+            <img src="./assets/profile-1.png" alt="Randy" class="w-10 h-10 rounded-full object-cover bg-slate-900" />
           </div>
           <div>
-            <h4 class="font-bold text-lg uppercase">Randy</h4>
-            <p class="text-xs">Mobile Application & Technology</p>
+            <h4 class="font-bold text-base tracking-tight group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Randy Fernanda</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium" data-i18n="hero_role">Mobile & Web Developer</p>
           </div>
-        </div>
-        <ul class="gap-10 md:flex hidden hover:*:text-primary *:duration-200">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About Me</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#certifications">Certifications</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li class="theme-switch">
-            <i class="fa-solid fa-circle-half-stroke cursor-pointer"></i>
-          </li>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+          <li><a href="#home" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_home">Home</a></li>
+          <li><a href="#experience" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_experience">Experience</a></li>
+          <li><a href="#about" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#projects" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#certifications" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_certifications">Certifications</a></li>
+          <li><a href="#contact" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_contact">Contact</a></li>
         </ul>
-        <div class="flex items-center gap-6">
-          <span class="theme-switch md:hidden">
-            <i class="fa-solid fa-circle-half-stroke cursor-pointer"></i>
-          </span>
-          <span id="menubar" class="cursor-pointer md:hidden text-xl">
-            <i class="fa-solid fa-bars"></i>
-          </span>
+
+        <!-- Right Controls (Language Switcher & Dark Mode) -->
+        <div class="flex items-center gap-4">
+          <!-- Language Switcher -->
+          <div class="flex items-center p-1 rounded-xl bg-slate-200/70 dark:bg-slate-800/80 border border-slate-300/50 dark:border-slate-700/50 text-xs font-bold">
+            <button class="lang-btn px-2.5 py-1 rounded-lg transition-all" data-lang="en">EN</button>
+            <button class="lang-btn px-2.5 py-1 rounded-lg transition-all" data-lang="id">ID</button>
+          </div>
+
+          <!-- Theme Switcher Button -->
+          <button class="theme-switch p-2 rounded-xl bg-slate-200/70 dark:bg-slate-800/80 hover:bg-violet-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon dark:hidden text-base"></i>
+            <i class="fa-solid fa-sun hidden dark:block text-base text-amber-400"></i>
+          </button>
+
+          <!-- Mobile Hamburger Trigger -->
+          <button id="menubar" class="lg:hidden p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" aria-label="Open Navigation">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
         </div>
       </nav>
     </header>
 
-    <span
-      id="backdrop"
-      class="fixed h-screen hidden bg-black/10 backdrop-blur-sm z-[997] inset-0 w-full"
-    ></span>
+    <!-- Backdrop for Mobile Nav -->
+    <div id="backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 hidden transition-opacity"></div>
 
-    <ul
-      id="mobile-nav"
-      class="gap-10 text-xl md:hidden dark:bg-slate-800 bg-primary text-white flex-center flex-col fixed w-full h-0 overflow-hidden bottom-0 duration-200 rounded-t-3xl left-0 z-[998]"
-    >
-      <li>
-        <a href="#home">Home</a>
-      </li>
-      <li>
-        <a href="#about">About Us</a>
-      </li>
-      <li>
-        <a href="#projects">Projects</a>
-      </li>
-      <li>
-        <a href="#contact">Contact Us</a>
-      </li>
-      <a href="#contact"></a>
-    </ul>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="fixed bottom-0 inset-x-0 z-50 glass-card rounded-t-3xl p-6 transform translate-y-full opacity-0 transition-all duration-300 lg:hidden border-t border-slate-200 dark:border-slate-800">
+      <ul class="flex flex-col gap-4 text-center font-semibold text-base mb-6">
+        <li><a href="#home" class="block py-2 hover:text-violet-600 dark:hover:text-violet-400" data-i18n="nav_home">Home</a></li>
+        <li><a href="#experience" class="block py-2 hover:text-violet-600 dark:hover:text-violet-400" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#about" class="block py-2 hover:text-violet-600 dark:hover:text-violet-400" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#projects" class="block py-2 hover:text-violet-600 dark:hover:text-violet-400" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#certifications" class="block py-2 hover:text-violet-600 dark:hover:text-violet-400" data-i18n="nav_certifications">Certifications</a></li>
+        <li><a href="#contact" class="block py-2 hover:text-violet-600 dark:hover:text-violet-400" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </div>
 
-    <!-- Home -->
-    <section
-      id="home"
-      class="min-h-screen container grid place-items-center relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-heroLight before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-heroDark"
-    >
-      <div
-        class="w-full pt-20 grid md:grid-cols-6 h-full items-center max-w-6xl justify-around"
-      >
-        <div
-          class="lg:col-span-2 sm:pl-2 md:col-span-3 md:text-left text-center"
-        >
-          <div>
-            <h5 class="font-medium text-gray-600 dark:text-gray-200">
-              Hello Welcome
-            </h5>
-            <h1
-              class="sm:text-5xl text-4xl dark:text-white !leading-normal relative font-medium"
-            >
-              I'm <span class="text-primary">Randy</span> <br />
-              Front-End &
-              <br />
-              Web Developer
-            </h1>
-          </div>
-          <div class="md:w-96 md:ml-auto flex mt-5 gap-2 dark:text-gray-300">
-            <p class="text-xs text-balance leading-5 max-w-md px-2 mx-auto">
-              Hi my name is Randy Fernanda Saputra, I'm a undergraduate student at Bina Nusantara University majoring at Mobile Application & Technology. Adept at programming, mobile application development, web development, and able to work both independently and as part of a team. Solution-oriented, possessing strong analytical skills, and committed to delivering optimal results.
-            </p>
-          </div>
-          <div
-            class="flex items-center md:justify-end justify-center dark:text-gray-200 text-gray-600 gap-6 mt-5"
-          >
-            <p class="text-xs">Follow Me</p>
-            <div class="flex justify-end gap-3">
-              <a href="https://github.com/randyfernandas" class="social-icon">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/randy-fernanda-saputra-b4b11a2b9/" class="social-icon">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-2 md:col-span-3">
-          <img
-            src="./assets/profile.png"
-            class="w-2/3 mx-auto md:w-full max-w-96 md:mt-0 mt-5"
-            alt=""
-          />
-        </div>
-        <div
-          class="lg:col-span-2 md:col-span-6 lg:bg-gradient-to-l md:bg-none mt-2 bg-gradient-to-l dark:from-slate-800 from-gray-100 lg:h-96 md:h-auto h-96 w-full"
-        >
-          <ul
-            class="text-2xl data-[slot=count]:*:text-3xl data-[slot=count]:*:font-bold leading-[3.14rem] text-center pt-5 lg:block md:flex items-center justify-between"
-          >
-            <li data-slot="count">9+</li>
-            <li>Programming <span class="text-primary">Languages</span></li>
-            <br />
-            <li data-slot="count">8+</li>
-            <li>Completed <span class="text-primary">Projects</span></li>
-            <li>
-              <a href="./assets/file/Resume.pdf" download>
-                <button class="btn btn-outline lg:mt-10 md:mt-0 mt-10">
-                  <i class="fa-solid fa-download"></i> Download CV
-                </button>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden">
+      <!-- Decorative background blur blobs -->
+      <div class="absolute top-1/4 left-10 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- About -->
-    <section id="about" class="container min-h-screen flex-center">
-      <div class="">
-        <div class="text-center text-balance">
-          <h3>What I Know</h3>
-          <p class="px-2 mt-3 text-gray-500">
-            Here's the programming languages, framework, and technical skills that i've learned
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-100 dark:bg-violet-950/80 border border-violet-200 dark:border-violet-800/80 text-violet-700 dark:text-violet-300 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-violet-500 animate-pulse"></span>
+            <span data-i18n="hero_welcome">Hello & Welcome</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            <span data-i18n="hero_iam">I'm</span> <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 dark:from-violet-400 dark:via-indigo-300 dark:to-cyan-400" data-i18n="hero_name">Randy</span><br />
+            <span class="text-slate-800 dark:text-slate-100" data-i18n="hero_role">Mobile & Web Developer</span>
+          </h1>
+
+          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal" data-i18n="hero_bio">
+            Hi, my name is Randy Fernanda Saputra. I am an undergraduate student at Bina Nusantara University majoring in Mobile Application & Technology. Skilled in cross-platform mobile development (iOS & Android) and web development. Solution-oriented, analytical, and committed to excellence.
           </p>
-        </div>
-        <div
-          class="md:max-w-full flex flex-wrap gap-6 px-2  *:sm:max-w-100 *:max-w-sm hover:*:brightness-90 *:mx-auto *:shadow-sm mt-5 mx-auto *:rounded-xl *:bg-gray-100 *:dark:bg-slate-800 *:p-1 *:flex  *:flex-col *:items-center *:gap-12"
-        >
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/c.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/java.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/python.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/kotlin.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/dart.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/html.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/css.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/tailwind.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/mysql.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/sqlite.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/flutter.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/android studio.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/firebase.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/figma.png" alt="" class="w-[30px] h-[40px]">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/notion.png" alt="">
-          </div>
-          <div class="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] justify-center">
-            <img src="./assets/trello.png" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects" class="container min-h-screen flex-center px-4">
-      <div class="text-center text-balance">
-        <h3>My Projects</h3>
-        <p class="px-2 mt-3 text-gray-500">
-          These are all my completed projects
-        </p>
-        <br />
-        <div class="container">
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/Piring Nusantara.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Piring Nusantara</h1>
-              <p>Piring Nusantara is an interactive Augmented Reality (AR) application that allows users to explore the rich culinary heritage of Indonesia through 3D models of traditional dishes from various regions. Developed using Unity, the app leverages AR technology to deliver an immersive and educational experience. With Piring Nusantara, users can point their devices at specific markers, and detailed 3D models of iconic Indonesian dishes such as rendang, sate, or nasi tumpeng will appear in real-time. Each model is accompanied by information on the dish’s origin, ingredients, and preparation methods, providing a deeper understanding of Indonesia’s culinary heritage.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/bonktoys.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Bonk Toys</h1>
-              <p>Bonk Toys is an online shop application specifically designed for action figure collectors and enthusiasts. Developed using Flutter (Dart), this app provides a comprehensive platform for browsing and purchasing a wide range of action figures, from superheroes to anime characters, and beyond. The app offers an easy-to-navigate interface that allows users to explore various categories of action figures, view detailed product descriptions, and examine high-resolution images of each figure. Whether you're looking for iconic superhero models or your favorite anime characters, Bonk Toys ensures a smooth shopping experience. The app also features a secure payment gateway, ensuring users can shop with confidence.</p>
+          <!-- Buttons & Social Links -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="./assets/file/Resume.pdf" download class="btn btn-primary">
+              <i class="fa-solid fa-download"></i> <span data-i18n="hero_download_cv">Download CV</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-regular fa-envelope"></i> <span data-i18n="nav_contact">Contact</span>
+            </a>
+            
+            <div class="flex items-center gap-3 sm:ml-4 pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-slate-200 dark:border-slate-800 sm:pl-6">
+              <a href="https://github.com/randyfernandas" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:scale-110 transition-all" aria-label="GitHub">
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/randy-fernanda-saputra-b4b11a2b9/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:scale-110 transition-all" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin text-lg"></i>
+              </a>
             </div>
           </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/bonkgarage.jpg" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Bonk Garage</h1>
-              <p>Bonk Garage is an online shop app designed for diecast model car enthusiasts. Developed using Android Studio with Kotlin, the app offers a streamlined platform for browsing and purchasing a wide range of diecast model cars, from classic cars to modern supercars, catering to collectors of all ages. The app features an elegant and user-friendly interface, making it easy for users to explore the various collections and find their favorite diecast models. Each product page includes detailed information, high-resolution images, and user reviews to assist buyers in making informed decisions. With a secure and efficient checkout system, Bonk Garage ensures a hassle-free shopping experience.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/puff & poof.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Puff & Poof</h1>
-              <p>Puff & Poof is a dedicated online shop application for plush toy lovers, offering a wide variety of adorable and high-quality stuffed animals. Developed using Android Studio with Kotlin, this app provides a seamless and enjoyable shopping experience, allowing users to browse, select, and purchase their favorite plush toys with ease. The app features a beautifully designed interface that showcases a curated collection of plush toys, ranging from cute animals to fantasy characters, ensuring there is something for everyone. Users can explore product details, view multiple images, and read customer reviews before making a purchase. The secure checkout process guarantees a safe and hassle-free transaction.</p>
+        </div>
+
+        <!-- Hero Avatar & Stats Cards -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+          <div class="relative group">
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-violet-600 to-cyan-500 blur-xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
+            <div class="relative rounded-3xl glass-card p-4 overflow-hidden max-w-xs sm:max-w-sm">
+              <img src="./assets/profile.png" alt="Randy Fernanda Saputra" class="rounded-2xl w-full h-auto object-cover transform group-hover:scale-105 transition duration-500" />
             </div>
           </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/pure plate.png" class="w-full lg:w-3/4" alt="" />
+
+          <!-- Quick Stats Banner -->
+          <div class="mt-8 grid grid-cols-3 gap-3 w-full max-w-md">
+            <div class="glass-card p-3 rounded-2xl text-center">
+              <span class="block text-xl font-extrabold text-violet-600 dark:text-violet-400">18+</span>
+              <span class="text-[0.7rem] font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_languages">Tech Stack & Tools</span>
             </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Pure Plate</h1>
-              <p>Pure Plate is an online shop application designed for health-conscious individuals seeking nutritious and balanced meals. Developed using Android Studio with Kotlin, the app provides users with a curated selection of healthy meals, each accompanied by detailed nutritional information to help them make informed food choices. Pure Plate offers a smooth and intuitive shopping experience, where users can browse through various meal options, view ingredients, and analyze nutritional values such as calories, protein, fat, and carbohydrate content. Whether you're on a specific diet or just looking for wholesome meals, Pure Plate ensures you find the perfect dish for your lifestyle. The app’s secure payment and fast checkout process ensure a seamless user experience.</p>
+            <div class="glass-card p-3 rounded-2xl text-center">
+              <span class="block text-xl font-extrabold text-violet-600 dark:text-violet-400">8+</span>
+              <span class="text-[0.7rem] font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_projects">Completed Projects</span>
             </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/willify.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Willify</h1>
-              <p>Willify is a sleek and user-friendly website designed for music lovers to listen to their favorite songs anytime, anywhere. Built using HTML and CSS, Willify offers a simple yet engaging interface, allowing users to explore and stream a vast collection of songs across different genres. With a clean design and easy navigation, Willify ensures a seamless music experience. Users can browse through curated playlists, discover new releases, or search for specific artists and albums. The minimalist layout keeps the focus on the music, while responsive design ensures that the website works smoothly on any device.</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/Dok Dok.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-1">Dok Dok</h1>
-              <p>Dok Dok is a telemedicine application prototype designed to provide accessible and affordable healthcare services for underserved communities. The prototype aims to address the challenges faced by individuals who struggle to access medical care due to geographical limitations or financial constraints. By leveraging digital technology, Dok Dok enables users to consult with licensed medical professionals remotely, receive medical advice, and access essential healthcare services from the comfort of their homes.</p>
+            <div class="glass-card p-3 rounded-2xl text-center">
+              <span class="block text-xl font-extrabold text-violet-600 dark:text-violet-400">12</span>
+              <span class="text-[0.7rem] font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_exp">Months Internship</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="container min-h-screen flex-center px-4">
-      <div class="text-center text-balance">
-        <h3>Certifications</h3>
-        <p class="px-2 mt-3 text-gray-500">
-          I got these certifications through online learning & competition
-        </p>
-        <br />
-        <div class="container">
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/flutter certif.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-5">Flutter Mobile Apps</h1>
-            </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/C certif.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-5">C Programming For Beginners - Master the C Language</h1>
-            </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="lg:w-1/2 flex flex-wrap mx-auto w-full  max-w-4xl md:px-0 px-10 mb-5 *:object-cover *:border-4 *:dark:border-white *:rounded-md gap-4">
-              <img src="./assets/intuitiva.png" class="w-full lg:w-3/4" alt="" />
-            </div>
-            <div class="lg:w-1/2 mb-5 sm:w-full px-2">
-              <h1 class="mb-5">INTUITIVA: Embrace Intuitive Digital Interface Design</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Experience Section (NEW) -->
+    <section id="experience" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="section-title" data-i18n="exp_title">Work Experience</h2>
+        <p class="section-subtitle" data-i18n="exp_subtitle">My professional journey and internship contributions</p>
 
-    <!-- Contact -->
-    <section
-      id="contact"
-      class="container relative max-w-4xl mx-auto min-h-screen flex-center px-5"
-    >
-      <div class="pb-10">
-        <div class="text-center">
-          <h3>Contact</h3>
-        </div>
-        <div
-          class="mt-12 justify-center items-center flex flex-col gap-5 sm:max-w-full mx-auto max-w-xs"
-        >
-          <div
-            class="dark:bg-gray-700 bg-white py-12 px-7 md:absolute  rounded-xl shadow-xl md:w-3/5 md:h-3/6 sm:h-4/6 top-28 lg:w-3/4 mx-auto"
-          >
-            <h3 class="font-semibold text-2xl border-b pb-4 border-gray-600">
-              You can find me at
-            </h3>
-            <div class="py-4">
-              <ul class="*:flex *:gap-4 *:items-center *:mt-4">
-                <li>
-                  <i class="fa-solid fa-location-dot"></i>
+        <div class="max-w-4xl mx-auto">
+          <div class="relative pl-6 sm:pl-8 border-l-2 border-violet-500/30 space-y-8">
+            <!-- Timeline Item: Time International -->
+            <div class="relative group">
+              <!-- Timeline Dot -->
+              <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-violet-600 ring-4 ring-violet-100 dark:ring-violet-950"></div>
+              
+              <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4 hover:border-violet-500/50 transition-all">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/60 dark:border-slate-700/60 pb-4">
                   <div>
-                    <h2>Permata Palem</h2>
-                    <address class="text-xs">Cibinong, Bogor</address>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100" data-i18n="exp_role">Mobile Developer Intern</h3>
+                    <p class="text-violet-600 dark:text-violet-400 font-semibold text-base" data-i18n="exp_company">Time International</p>
                   </div>
-                </li>
-                <li>
-                  <i class="fa-solid fa-envelope"></i>
-                  <p>randyfernanda311@gmail.com</p>
-                </li>
-                <li>
-                  <i class="fa-solid fa-phone"></i>
-                  <p>+62 81283163709</p>
-                </li>
-              </ul>
-              <div
-                class="flex items-center md:justify-end justify-center dark:text-gray-200 text-gray-600 gap-6 mt-9"
-              >
-                <p class="text-xs">Follow me</p>
-                <div class="flex justify-end gap-3">
-                  <a href="https://github.com/randyfernandas" class="social-icon">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/randy-fernanda-saputra-b4b11a2b9/" class="social-icon">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                  <a href="https://www.instagram.com/randyyfernanda/" class="social-icon">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
+                  <span class="px-3.5 py-1 rounded-full bg-violet-100 dark:bg-violet-950/80 text-violet-700 dark:text-violet-300 text-xs font-semibold border border-violet-200 dark:border-violet-800" data-i18n="exp_date">
+                    3 Feb 2025 - 30 Jan 2026
+                  </span>
+                </div>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="exp_desc">
+                  Developed cross-platform mobile applications for both Android and iOS using Flutter, as well as building web applications using React JS.
+                </p>
+
+                <!-- Tech Badges -->
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="tech-badge">Flutter</span>
+                  <span class="tech-badge">iOS</span>
+                  <span class="tech-badge">Android</span>
+                  <span class="tech-badge">React JS</span>
+                  <span class="tech-badge">Dart</span>
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">Swift</span>
                 </div>
               </div>
             </div>
@@ -392,50 +192,365 @@
       </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="about" class="py-20 bg-slate-100/50 dark:bg-slate-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="section-title" data-i18n="skills_title">Technical Skills</h2>
+        <p class="section-subtitle" data-i18n="skills_subtitle">Programming languages, frameworks, databases, and development tools I work with</p>
+
+        <!-- Grid of 18 Tech Icons -->
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 sm:gap-6 max-w-5xl mx-auto">
+          <!-- Skill Items -->
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/flutter.png" alt="Flutter" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Flutter</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/react.png" alt="React JS" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">React JS</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/swift.png" alt="Swift" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Swift</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/kotlin.png" alt="Kotlin" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Kotlin</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/dart.png" alt="Dart" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Dart</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/android studio.png" alt="Android Studio" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300 text-center">Android Studio</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/python.png" alt="Python" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Python</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/c.png" alt="C" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">C</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/java.png" alt="Java" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Java</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/html.png" alt="HTML5" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">HTML5</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/css.png" alt="CSS3" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">CSS3</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/tailwind.png" alt="Tailwind" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Tailwind</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/mysql.png" alt="MySQL" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">MySQL</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/sqlite.png" alt="SQLite" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">SQLite</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/firebase.png" alt="Firebase" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Firebase</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/figma.png" alt="Figma" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Figma</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/notion.png" alt="Notion" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Notion</span>
+          </div>
+          <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-all group">
+            <img src="./assets/trello.png" alt="Trello" class="w-12 h-12 object-contain group-hover:drop-shadow-lg transition-all" />
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Trello</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
+        <p class="section-subtitle" data-i18n="projects_subtitle">Showcase of mobile and web applications I have designed and developed</p>
+
+        <!-- Projects Grid Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: MoneyWise (NEW HIGHLIGHT) -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300 border-2 border-violet-500/30">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/moneywise.png" alt="MoneyWise" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute top-3 right-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                Featured App
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-2xl font-bold tracking-tight" data-i18n="project_moneywise_title">MoneyWise</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_moneywise_desc">
+                Comprehensive financial management Android application featuring automated receipt scanning powered by OCR technology and an interactive AI chatbot assistant for smart budgeting.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">Flutter</span>
+                <span class="tech-badge">Firebase</span>
+                <span class="tech-badge">OCR Scan</span>
+                <span class="tech-badge">AI Chatbot</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Piring Nusantara -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/Piring Nusantara.png" alt="Piring Nusantara" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_piring_title">Piring Nusantara</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_piring_desc">
+                Interactive Augmented Reality (AR) application showcasing Indonesia's rich culinary heritage through detailed 3D dish models and cultural background stories built with Unity.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">Unity</span>
+                <span class="tech-badge">Augmented Reality (AR)</span>
+                <span class="tech-badge">3D Models</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Bonk Toys -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/bonktoys.png" alt="Bonk Toys" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_bonktoys_title">Bonk Toys</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_bonktoys_desc">
+                E-commerce mobile application for action figure collectors built with Flutter, featuring curated catalogs, high-res galleries, and secure checkout integration.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">Flutter</span>
+                <span class="tech-badge">Dart</span>
+                <span class="tech-badge">E-Commerce</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Bonk Garage -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/bonkgarage.jpg" alt="Bonk Garage" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_bonkgarage_title">Bonk Garage</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_bonkgarage_desc">
+                Diecast model car shop Android application developed using Kotlin, providing streamlined browsing and order tracking for enthusiast collectors.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">Android Studio</span>
+                <span class="tech-badge">Kotlin</span>
+                <span class="tech-badge">Diecast Store</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Puff & Poof -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/puff & poof.png" alt="Puff & Poof" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_puffpoof_title">Puff & Poof</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_puffpoof_desc">
+                Adorable plush toy shop Android app built with Kotlin, offering clean product showcases and an effortless shopping experience.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">Android Studio</span>
+                <span class="tech-badge">Kotlin</span>
+                <span class="tech-badge">Plush Shop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Pure Plate -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/pure plate.png" alt="Pure Plate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_pureplate_title">Pure Plate</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_pureplate_desc">
+                Nutritious meal order Android app assisting health-conscious users with macronutrient breakdown and balanced meal delivery options.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">Android Studio</span>
+                <span class="tech-badge">Kotlin</span>
+                <span class="tech-badge">Health & Diet</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7: Willify -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/willify.png" alt="Willify" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_willify_title">Willify</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_willify_desc">
+                Sleek music streaming web application designed for seamless song discovery and continuous playback with clean responsive UI.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Music Player</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8: Dok Dok -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-video bg-slate-900">
+              <img src="./assets/Dok Dok.png" alt="Dok Dok" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+              <h3 class="text-xl font-bold tracking-tight" data-i18n="project_dokdok_title">Dok Dok</h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-grow" data-i18n="project_dokdok_desc">
+                Telemedicine mobile application prototype built to connect underserved communities with remote healthcare professionals.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="tech-badge">UI/UX Design</span>
+                <span class="tech-badge">Telemedicine</span>
+                <span class="tech-badge">Prototype</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-100/50 dark:bg-slate-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="section-title" data-i18n="certifications_title">Certifications</h2>
+        <p class="section-subtitle" data-i18n="certifications_subtitle">Credentials and certificates earned through online learning & competitions</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Cert 1 -->
+          <div class="glass-card rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+            <div class="aspect-[4/3] bg-slate-900 overflow-hidden">
+              <img src="./assets/flutter certif.png" alt="Flutter Mobile Apps" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100" data-i18n="cert_flutter">Flutter Mobile Apps Development</h3>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="glass-card rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+            <div class="aspect-[4/3] bg-slate-900 overflow-hidden">
+              <img src="./assets/C certif.png" alt="C Programming" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100" data-i18n="cert_c">C Programming For Beginners - Master the C Language</h3>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="glass-card rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+            <div class="aspect-[4/3] bg-slate-900 overflow-hidden">
+              <img src="./assets/intuitiva.png" alt="INTUITIVA Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100" data-i18n="cert_ui">INTUITIVA: Embrace Intuitive Digital Interface Design</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+        <p class="section-subtitle" data-i18n="contact_subtitle">Feel free to reach out for opportunities, collaborations, or inquiries</p>
+
+        <div class="max-w-2xl mx-auto">
+          <div class="glass-card rounded-3xl p-8 sm:p-10 space-y-8 text-center">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100" data-i18n="contact_find">You can find me at</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50">
+                <div class="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-950/80 text-violet-600 dark:text-violet-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-location-dot text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm" data-i18n="contact_location_title">Permata Palem</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="contact_location_sub">Cibinong, Bogor, Indonesia</p>
+                </div>
+              </div>
+
+              <!-- Email Link -->
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=randyfernanda311@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50 hover:border-violet-500 dark:hover:border-violet-400 hover:scale-[1.03] transition-all group">
+                <div class="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-950/80 text-violet-600 dark:text-violet-400 group-hover:bg-violet-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                  <i class="fa-solid fa-envelope text-lg"></i>
+                </div>
+                <div class="overflow-hidden">
+                  <h4 class="font-bold text-sm group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Gmail</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 truncate">randyfernanda311@gmail.com</p>
+                </div>
+              </a>
+
+              <!-- Phone / WhatsApp Link -->
+              <a href="https://wa.me/6281283163709" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50 hover:border-emerald-500 dark:hover:border-emerald-400 hover:scale-[1.03] transition-all group">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                  <i class="fa-brands fa-whatsapp text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">WhatsApp</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">+62 81283163709</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="pt-4 flex items-center justify-center gap-4 border-t border-slate-200/60 dark:border-slate-700/60">
+              <a href="https://github.com/randyfernandas" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:scale-110 transition-all">
+                <i class="fa-brands fa-github text-xl"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/randy-fernanda-saputra-b4b11a2b9/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:scale-110 transition-all">
+                <i class="fa-brands fa-linkedin text-xl"></i>
+              </a>
+              <a href="https://www.instagram.com/randyyfernanda/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:scale-110 transition-all">
+                <i class="fa-brands fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="dark:bg-slate-700 bg-slate-100 text-center py-2">
-      <ul class="flex-center gap-5 py-4 text-sm">
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#certifications">Certifications</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
+    <footer class="py-8 border-t border-slate-200/60 dark:border-slate-800/60 text-center text-slate-500 dark:text-slate-400 text-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 Randy Fernanda Saputra. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#home" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_home">Home</a>
+          <a href="#experience" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_experience">Experience</a>
+          <a href="#projects" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors" data-i18n="nav_projects">Projects</a>
+        </div>
+      </div>
     </footer>
 
     <script type="module" src="/main.js"></script>
-    <script>
-      const header = document.querySelector("header");
-
-      const toggleClasses = (element, classes, condition) => {
-        classes.forEach((className) => {
-          element.classList.toggle(className, condition);
-        });
-      };
-
-      window.addEventListener("scroll", () => {
-        toggleClasses(
-          header,
-          [
-            "shadow-lg",
-            "dark:sm:bg-slate-900",
-            "dark:bg-slate-800",
-            "dark:text-white",
-            "bg-white",
-          ],
-          window.scrollY > 0
-        );
-      });
-    </script>
   </body>
 </html>
